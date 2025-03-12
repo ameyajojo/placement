@@ -1,0 +1,106 @@
+#1
+simulation = input().strip()
+occupied_c = 0
+chairs_need = 0
+
+for event in simulation:
+    if event in ('C', 'U'):  
+        occupied_c += 1
+        if occupied_c > chairs_need:
+            chairs_need = occupied_c
+    else:  
+        occupied_c -= 1
+
+print(chairs_need)
+
+
+#2
+n=int(input())
+my_list=list(map(int,input().split(" ")))
+if len(my_list)==len(set(my_list)):
+    print("false")
+else:
+    print("true")
+#3
+s=input()
+d=input()
+print("true" if sorted(s) == sorted(d) else "false")
+
+#4
+n = int(input()) 
+count = 0  
+
+for i in range(n):
+    num = int(input()) 
+    if num % 2 == 1: 
+        count += 1
+
+if count == 0:
+    print("No odd elements are present")
+else:
+    print("Odd Elements:", count)
+
+#5
+
+n = int(input())  
+nums = list(map(int, input().split()))  
+target = int(input())  
+
+left, right = 0, n - 1
+
+while left < right:
+    s = nums[left] + nums[right]
+    if s == target:
+        print("Yes")
+        break
+    elif s < target:
+        left += 1
+    else:
+        right -= 1
+else:
+    print("No")  
+
+
+#6
+n=int(input())
+m=int(input())
+for i in range(n+1, m):
+    if i % 3 == 0:  
+        print(i, end=" ")
+
+#7
+n = int(input()) 
+sum=0+n
+count=0
+total_sum = 0.0  
+while count < n:
+    num = float(input())  
+    total_sum += num
+    count += 1 
+average = total_sum / n  
+print(f"The average is: {average:.3f}") 
+
+#8
+n = int(input())
+flag = 0
+if n < 2:
+    flag = 1
+else:
+    for i in range(2, int(n**0.5) + 1):  
+        if n % i == 0:
+            flag = 1
+            break
+if flag == 1:
+    print(f"{n} is not a prime number")  
+else:
+    print(f"{n} is a prime number")
+
+#9
+n = int(input())  
+product = 1.0
+for _ in range(n):
+    num = float(input())  
+    product *= num  
+print(f"The product of the numbers is: {product:.2f}")
+
+
