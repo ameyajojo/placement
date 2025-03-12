@@ -1,0 +1,13 @@
+simulation = input().strip()
+occupied_c = 0
+chairs_need = 0
+
+for event in simulation:
+    if event in ('C', 'U'):  
+        occupied_c += 1
+        if occupied_c > chairs_need:
+            chairs_need = occupied_c
+    else:  
+        occupied_c -= 1
+
+print(chairs_need)
