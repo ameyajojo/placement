@@ -1,0 +1,3 @@
+s=input()
+d=input()
+print("true" if sorted(s) == sorted(d) else "false")
